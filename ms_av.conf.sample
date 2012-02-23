@@ -1,0 +1,21 @@
+# Url para download
+URL_DOWN="http://go.microsoft.com/fwlink/?LinkID=87342"
+
+# Endereço do Proxy
+PROXY_ADDRESS="192.168.100.1"
+
+# Porta utilizada pelo proxy
+PROXY_PORT="3128"
+
+# Usuário do proxy
+PROXY_U="usuario"
+
+# Senha do usuário do proxy
+PROXY_P="senha"
+
+# Email do admin
+MAIL_TO="meu@email.com"
+
+# Local onde será salvo o download
+SAVE_TO="/home/servidor/download""
+

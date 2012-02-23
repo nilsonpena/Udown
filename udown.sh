@@ -39,7 +39,7 @@ CONFIG_NAME=$(echo $1 | cut -f1 -d.)
 
 # Array que armazena os nomes das variáveis que vão ser buscadas no
 # arquivo de configuração
-CHAVES=( PROXY_U PROXY_P PROXY_ADDRESS PROXY_PORT URL_DOWN SAVE_TO MAIL_TO )
+CHAVES=( PROXY_U PROXY_P PROXY_ADDRESS PROXY_PORT URL_DOWN SAVE_TO MAIL_TO FILE_NAME )
 
 # Armazena a quantidade de elementos existentes na array CHAVES
 QTD_CHAVES=${#CHAVES[*]}
@@ -77,7 +77,7 @@ rm -f $LOG_MAIL
 
 # Cabeçalho do arquivo LOG_MAIL
 echo "Rotina de Download iniciada em $(date +%F' '%T)" >> $LOG_MAIL
-echo "= = = = = = = = = = = = = = = = = = = = = = = =" >> $LOG_MAIL
+echo "= = = = = = = = = = = = = = = = = = = = = = =" >> $LOG_MAIL
 echo " " >> $LOG_MAIL
 
 # Anexa o conteúdo do arquivo LOG_WGET ao fim do arquivo LOG_MAIL
@@ -96,7 +96,7 @@ cat $LOG_MAIL | mail  -s "$ASSUNTO" $MAIL_TO
 # -N Só baixa o arquivo se ele for diferente do que está no servidor, comparando o timestamp e tamanho
 # -v modo verboso. Adiciona a barra de progresso ao loss outras informações ao log
 # -P Especifica o local onde será salvo o arquivo 
-wget -c -N -v --progress=dot:mega  –proxy=on -o $LOG_WGET -t 8 $URL_DOWN -P $SAVE_TO
+wget -c -v --progress=dot:mega --user-agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)" –proxy=on -o $LOG_WGET -t 8 $URL_DOWN -P $SAVE_TO -O $SAVE_TO/$FILE_NAME
 
 # Envia email com o log do wget
 EmailLog

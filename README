@@ -7,8 +7,6 @@ ex.: cp ms_av.conf.sample ms_av.conf
 
 As variáveis do .conf estão comentadas.
 
-O download só será efetuado se o arquivo existente localmente for diferente do arquivo remoto.
-
 Pode criar quantos .conf for necessário, os arquivos de log serão independentes.
 
 AGENDAMENTO
@@ -24,5 +22,5 @@ Campo 	Função
 3o. 	Dia do mês (1-31) 
 4o. 	Mês (1-12)
 5o. 	Dia da semana (0-6, onde 0 é domingo)
-6o. 	Programa para execução
+6o. 	USUARIO COMANDO para execução
 

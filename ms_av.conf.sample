@@ -19,3 +19,6 @@ MAIL_TO="meu@email.com"
 # Local onde será salvo o download
 SAVE_TO="/home/servidor/download""
 
+# Nome final do arquivo
+FILE_NAME="mpam-fe.exe"
+
